@@ -31,7 +31,7 @@ app.post('/spoiler', function (req, res) {
             attachments: [
                 {
                     color: 'danger',
-                    text: userName + ' posted a spoiler...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' + spoilerText
+                    text: userName + ' testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler..testing posted a spoiler...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' + spoilerText,
                 }
             ]
         }
