@@ -27,6 +27,7 @@ app.post('/spoiler', function (req, res) {
         //Lets post the following key/values as form
         json: {
             response_type: 'in_channel',
+            text: userName + ' testing posted a spoiler...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' + spoilerText
             attachments: [
                 {
                     color: 'danger',
