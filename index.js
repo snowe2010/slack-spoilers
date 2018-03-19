@@ -5,6 +5,11 @@ var app = express();
 app.use(bodyParser.urlencoded());
 app.set('port', (process.env.PORT || 5000));
 
+app.get('/', function(req, res) {
+    console.log("HI");
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end();
+})
 app.post('/spoiler', function (req, res) {
     var userName = req.body.user_name;
     var spoilerText = req.body.text;
@@ -14,6 +19,7 @@ app.post('/spoiler', function (req, res) {
     res.end();
 
     console.log('url is', req.body);
+    console.log('userName is', userName);
 
     request({
         url: responseUrl, //URL to hit
