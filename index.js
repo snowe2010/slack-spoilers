@@ -38,7 +38,7 @@ app.post('/spoiler', function (req, res) {
             "author_icon": "http://flickr.com/icons/bobby.jpg",
             "title": "Slack API Documentation",
             "title_link": "https://api.slack.com/",
-            "text": userName + " Optional text that \n\n\n\n\n\nappears withain the attachment" + spoilerText,
+            "text": " Optional text that \n\n\n\n\n\nappears within the attachment",
             "fields": [
                 {
                     "title": "Priority",
