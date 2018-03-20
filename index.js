@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 })
 app.post('/spoiler', function (req, res) {
     var userName = req.body.user_name;
-    var spoilerText = req.body.text;
+    var fullSpoilerText = req.body.text;
     var responseUrl = req.body.response_url;
     let token = req.body.token;
     let team_id = req.body.team_id;
@@ -27,6 +27,10 @@ app.post('/spoiler', function (req, res) {
     let response_url = req.body.response_url;
     let trigger_id = req.body.trigger_id;
 
+    let spoilerTitleIndex = fullSpoilerText.indexOf('[');
+    let spoilerText = fullSpoilerText.slice(0, spoilerTitleIndex);
+    let spoilerTitle = fullSpoilerText.slice(spoilerTitleIndex);
+
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end();
 
@@ -34,7 +38,7 @@ app.post('/spoiler', function (req, res) {
     console.log('userName is', userName);
     console.log('response url is', responseUrl)
     console.log('token is ', token);
-    
+
     // let util = require('util');
     // console.log(util.inspect(req, false, null));
 
@@ -65,7 +69,7 @@ app.post('/spoiler', function (req, res) {
         //Lets post the following key/values as form
         json: {
             response_type: 'in_channel',
-            
+
             "attachments": [
                 {
                     "fallback": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
@@ -74,7 +78,7 @@ app.post('/spoiler', function (req, res) {
                     "author_name": userName,
                     // "author_link": "http://flickr.com/bobby/",
                     // "author_icon": "http://flickr.com/icons/bobby.jpg",
-                    // "title": "Slack API Documentation",
+                    "title": spoilerTitle,
                     // "title_link": "https://api.slack.com/",
                     "text": userName + " posted some spoillaaassss \n \n \n \n \n \n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                " + spoilerText,
                     // "fields": [
