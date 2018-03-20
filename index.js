@@ -33,6 +33,7 @@ app.post('/spoiler', function (req, res) {
     console.log('url is', req.body);
     console.log('userName is', userName);
     console.log('response url is', responseUrl)
+    console.log('token is ', token);
     
     // let util = require('util');
     // console.log(util.inspect(req, false, null));
