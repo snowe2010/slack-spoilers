@@ -36,7 +36,6 @@ app.post('/spoiler', function (req, res) {
     let util = require('util');
     console.log(util.inspect(req, false, null));
 
-    
     request({
         url: "https://slack.com/api/chat.postMessage",
         method: 'POST',
@@ -45,7 +44,14 @@ app.post('/spoiler', function (req, res) {
             channel: channel_id,
             text: "test",
             as_user: true,
-            
+
+        }
+    }, function(error, response, body){
+        if(error) {
+            console.log(error);
+            console.log('asdfljasdf');
+        } else {
+            console.log(response.statusCode, body);
         }
     })
     request({
