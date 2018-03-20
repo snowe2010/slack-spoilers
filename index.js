@@ -14,6 +14,17 @@ app.post('/spoiler', function (req, res) {
     var userName = req.body.user_name;
     var spoilerText = req.body.text;
     var responseUrl = req.body.response_url;
+    let token = req.body.token;
+    let team_id = req.body.team_id;
+    let team_domain = req.body.team_domain;
+    let channel_id = req.body.channel_id;
+    let channel_name = req.body.channel_name;
+    let user_id = req.body.user_id;
+    let user_name = req.body.user_name;
+    let command = req.body.command;
+    let text = req.body.text;
+    let response_url = req.body.response_url;
+    let trigger_id = req.body.trigger_id;
 
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end();
@@ -21,7 +32,22 @@ app.post('/spoiler', function (req, res) {
     console.log('url is', req.body);
     console.log('userName is', userName);
     console.log('response url is', responseUrl)
-    request
+    
+    let util = require('util');
+    console.log(util.inspect(req, false, null));
+
+    
+    request({
+        url: "https://slack.com/api/chat.postMessage",
+        method: 'POST',
+        json: {
+            token: token,
+            channel: channel_id,
+            text: "test",
+            as_user: true,
+            
+        }
+    })
     request({
         url: responseUrl, //URL to hit
         method: 'POST',
