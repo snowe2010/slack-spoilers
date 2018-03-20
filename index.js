@@ -53,7 +53,7 @@ app.post('/spoiler', function (req, res) {
         } else {
             console.log(response.statusCode, body);
         }
-    })
+    }).auth(null, null, true, token);
     // request({
     //     url: responseUrl, //URL to hit
     //     method: 'POST',
