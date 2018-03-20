@@ -28,8 +28,8 @@ app.post('/spoiler', function (req, res) {
     let trigger_id = req.body.trigger_id;
 
     let spoilerTitleIndex = fullSpoilerText.indexOf('[');
-    let spoilerText = fullSpoilerText.slice(0, spoilerTitleIndex);
-    let spoilerTitle = fullSpoilerText.slice(spoilerTitleIndex);
+    let spoilerText = spoilerTitleIndex > 0 ? fullSpoilerText.slice(0, spoilerTitleIndex) : '';
+    let spoilerTitle = spoilerTitleIndex > 0 ? fullSpoilerText.slice(spoilerTitleIndex) : fullSpoilerText;
 
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end();
@@ -73,9 +73,9 @@ app.post('/spoiler', function (req, res) {
             "attachments": [
                 {
                     "fallback": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
-                    "color": "#36a64f",
+                    "color": "#F44336",
                     // "pretext": "Optional text that appears above the attachment block",
-                    "author_name": userName,
+                    // "author_name": userName,
                     // "author_link": "http://flickr.com/bobby/",
                     // "author_icon": "http://flickr.com/icons/bobby.jpg",
                     "title": spoilerTitle,
