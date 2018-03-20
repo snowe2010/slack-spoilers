@@ -76,7 +76,7 @@ app.post('/spoiler', function (req, res) {
                     // "author_icon": "http://flickr.com/icons/bobby.jpg",
                     // "title": "Slack API Documentation",
                     // "title_link": "https://api.slack.com/",
-                    "text": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
+                    "text": userName +" posted some spoillaaassss                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                " + spoilerText,
                     // "fields": [
                     //     {
                     //         "title": "Priority",
