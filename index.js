@@ -39,8 +39,10 @@ app.post('/spoiler', function (req, res) {
     request({
         url: "https://slack.com/api/chat.postMessage",
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         json: {
-            token: token,
             channel: channel_id,
             text: "test",
             as_user: true,
