@@ -38,7 +38,7 @@ app.post('/spoiler', function (req, res) {
             "author_icon": "http://flickr.com/icons/bobby.jpg",
             "title": "Slack API Documentation",
             "title_link": "https://api.slack.com/",
-            "text": " Optional text that \n\n\n\n\n\nappears within the attachment",
+            "text": " Optional text that \n \n \n \n \n \n appears within the attachment",
             "fields": [
                 {
                     "title": "Priority",
@@ -64,5 +64,5 @@ app.post('/spoiler', function (req, res) {
 });
 
 app.listen(app.get('port'), function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port 5000!');
 });
