@@ -43,7 +43,7 @@ app.post('/spoiler', function (req, res) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
-            Authorization: 'Basic ' + token,
+            Authorization: 'Basic xoxp-9433604581-24440771731-332547015026-15032b57801756686c4e944af3ec9b1f',
         },
         json: {
             channel: channel_id,
