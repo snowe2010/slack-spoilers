@@ -20,7 +20,7 @@ app.post('/spoiler', function (req, res) {
 
     console.log('url is', req.body);
     console.log('userName is', userName);
-
+    console.log('response url is', responseUrl)
     request({
         url: responseUrl, //URL to hit
         method: 'POST',
