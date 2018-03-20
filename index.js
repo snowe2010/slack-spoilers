@@ -38,7 +38,7 @@ app.post('/spoiler', function (req, res) {
     // let util = require('util');
     // console.log(util.inspect(req, false, null));
 
-    request({
+    /*request({
         url: "https://slack.com/api/chat.postMessage",
         method: 'POST',
         headers: {
@@ -58,47 +58,47 @@ app.post('/spoiler', function (req, res) {
         } else {
             console.log(response.statusCode, body);
         }
-    }).auth(null, null, true, token);
-    // request({
-    //     url: responseUrl, //URL to hit
-    //     method: 'POST',
-    //     //Lets post the following key/values as form
-    //     json: {
-    //         response_type: 'in_channel',
+    }).auth(null, null, true, token);*/
+    request({
+        url: responseUrl, //URL to hit
+        method: 'POST',
+        //Lets post the following key/values as form
+        json: {
+            response_type: 'in_channel',
             
-    //         "attachments": [
-    //         {
-    //         "fallback": "Required plain-text summary of the attachment.",
-    //         "color": "#36a64f",
-    //         "pretext": "Optional text that appears above the attachment block",
-    //         "author_name": "Bobby Tables",
-    //         "author_link": "http://flickr.com/bobby/",
-    //         "author_icon": "http://flickr.com/icons/bobby.jpg",
-    //         "title": "Slack API Documentation",
-    //         "title_link": "https://api.slack.com/",
-    //         "text": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
-    //         "fields": [
-    //             {
-    //                 "title": "Priority",
-    //                 "value": "High",
-    //                 "short": false
-    //             }
-    //         ],
-    //         "image_url": "http://my-website.com/path/to/image.jpg",
-    //         "thumb_url": "http://example.com/path/to/thumb.png",
-    //         "footer": "Slack API",
-    //         "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
-    //         "ts": 123456789
-    //     }
-    // ]
-    //     }
-    // }, function(error, response, body){
-    //     if(error) {
-    //         console.log(error);
-    //     } else {
-    //         console.log(response.statusCode, body);
-    //     }
-    // });
+            "attachments": [
+                {
+                    "fallback": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
+                    "color": "#36a64f",
+                    // "pretext": "Optional text that appears above the attachment block",
+                    "author_name": userName,
+                    // "author_link": "http://flickr.com/bobby/",
+                    // "author_icon": "http://flickr.com/icons/bobby.jpg",
+                    // "title": "Slack API Documentation",
+                    // "title_link": "https://api.slack.com/",
+                    "text": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
+                    // "fields": [
+                    //     {
+                    //         "title": "Priority",
+                    //         "value": "High",
+                    //         "short": false
+                    //     }
+                    // ],
+                    // "image_url": "http://my-website.com/path/to/image.jpg",
+                    // "thumb_url": "http://example.com/path/to/thumb.png",
+                    // "footer": "Slack API",
+                    // "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
+                    // "ts": 123456789
+                }
+            ]
+        }
+    }, function(error, response, body){
+        if(error) {
+            console.log(error);
+        } else {
+            console.log(response.statusCode, body);
+        }
+    });
 });
 
 app.listen(app.get('port'), function () {
