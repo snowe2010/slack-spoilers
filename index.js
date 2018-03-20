@@ -21,6 +21,7 @@ app.post('/spoiler', function (req, res) {
     console.log('url is', req.body);
     console.log('userName is', userName);
     console.log('response url is', responseUrl)
+    request
     request({
         url: responseUrl, //URL to hit
         method: 'POST',
@@ -38,7 +39,7 @@ app.post('/spoiler', function (req, res) {
             "author_icon": "http://flickr.com/icons/bobby.jpg",
             "title": "Slack API Documentation",
             "title_link": "https://api.slack.com/",
-            "text": " Optional text that \n \n \n \n \n \n appears within the attachment",
+            "text": userName +" posted some spoillaaassss \n \n \n \n \n \n " + spoilerText,
             "fields": [
                 {
                     "title": "Priority",
